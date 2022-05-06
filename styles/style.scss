@@ -1,0 +1,30 @@
+$almost-White: hsl(0, 0%, 98%);
+$medium-gray: hsl(0, 0%, 41%);
+$almost-Black: hsl(0, 0%, 8%);
+
+
+body{
+    margin: 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    .logo{
+        margin: 1.5em 1.25em;
+    }
+    .menu-open{
+        margin: 1.5em;
+    }
+}
+
+nav{
+    display: none;
+}
+section.hero{
+    img{
+        width: 100%;
+    }
+}

@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+header .logo {
+  margin: 1.5em 1.25em;
+}
+
+header .menu-open {
+  margin: 1.5em;
+}
+
+nav {
+  display: none;
+}
+
+section.hero img {
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */
