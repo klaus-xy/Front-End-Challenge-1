@@ -36,6 +36,12 @@ nav {
   color: dimgray;
   text-transform: capitalize;
   z-index: 10;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: -webkit-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
+  transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
 }
 
 nav .menu-close {
@@ -53,11 +59,24 @@ nav .arrow-down {
 
 nav .sub-menu {
   display: none;
+  padding: 0;
+  padding-top: 1em;
+}
+
+nav .sub-menu .dropdown-icon {
+  padding-right: 1em;
+  position: relative;
+  top: 2px;
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
 }
 
 nav a {
   text-decoration: none;
   color: dimgray;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 nav a:hover {
@@ -65,7 +84,7 @@ nav a:hover {
 }
 
 nav .main-nav {
-  margin-top: 5em;
+  margin-top: 4em;
   padding: 0em;
 }
 
@@ -74,7 +93,7 @@ nav .main-nav li {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  padding: .8em 1.5em;
+  padding: .6em 1.5em;
 }
 
 nav .main-nav li:hover {
@@ -86,17 +105,22 @@ nav .login-reg {
   margin-top: 1em;
   padding: 0em;
   text-align: center;
+  font-size: 15px;
 }
 
 nav .login-reg li {
   list-style: none;
-  padding: 1em;
+  padding: .8em;
 }
 
 nav .login-reg .with-borders {
-  padding: .6em 3.5em;
+  padding: .6em 4em;
   border: 2px solid dimgray;
   border-radius: .9em;
+}
+
+nav .login-reg .with-borders:hover {
+  border-color: #141414;
 }
 
 section.hero {

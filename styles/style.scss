@@ -35,6 +35,8 @@ nav{
     color:$medium-gray;
     text-transform: capitalize;
     z-index: 10;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
 
     .menu-close{
         float: right;
@@ -48,24 +50,36 @@ nav{
         padding: 0em .5em;
     }
     .sub-menu{
-        display: none;
+       display: none;
+       padding: 0;
+       padding-top: 1em;
+       
+       .dropdown-icon{
+           padding-right: 1em;
+           position: relative;
+           top: 2px;
+           transform: scale(1.2, 1.2);
+       }
+
     }
+
     a{
         text-decoration: none;
         color: $medium-gray;
+        align-items: center;
 
         &:hover{
             color: $almost-black;
         }
     }
     .main-nav{
-        margin-top: 5em;
+        margin-top: 4em;
         padding: 0em;
         
        li{
            list-style: none;
            width: max-content;
-           padding: .8em 1.5em;
+           padding: .6em 1.5em;
 
            &:hover{
             color: $almost-black;
@@ -78,16 +92,21 @@ nav{
         margin-top: 1em;
         padding: 0em;
         text-align: center;
+        font-size: 15px;
 
         li{
             list-style: none;
-            padding: 1em;
+            padding: .8em;
         }
 
         .with-borders{
-            padding: .6em 3.5em;
+            padding: .6em 4em;
             border: 2px solid $medium-gray;
             border-radius: .9em;
+            
+            &:hover{
+                border-color: $almost-black;
+            }
         }
     }
 }
