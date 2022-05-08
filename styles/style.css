@@ -1,5 +1,7 @@
+@import url(https://fonts.google.com/specimen/Epilogue);
 body {
   margin: 0;
+  font-family: 'Epilogue', sans-serif;
 }
 
 header {
@@ -23,10 +25,144 @@ header .menu-open {
 }
 
 nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: #fafafa;
+  height: 100vh;
+  width: 65%;
+  font-weight: 500;
+  font-size: 17px;
+  color: dimgray;
+  text-transform: capitalize;
+  z-index: 10;
+}
+
+nav .menu-close {
+  float: right;
+  margin: 1em 1em;
+}
+
+nav .arrow-up {
   display: none;
+}
+
+nav .arrow-down {
+  padding: 0em .5em;
+}
+
+nav .sub-menu {
+  display: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: dimgray;
+}
+
+nav a:hover {
+  color: #141414;
+}
+
+nav .main-nav {
+  margin-top: 5em;
+  padding: 0em;
+}
+
+nav .main-nav li {
+  list-style: none;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: .8em 1.5em;
+}
+
+nav .main-nav li:hover {
+  color: #141414;
+  cursor: pointer;
+}
+
+nav .login-reg {
+  margin-top: 1em;
+  padding: 0em;
+  text-align: center;
+}
+
+nav .login-reg li {
+  list-style: none;
+  padding: 1em;
+}
+
+nav .login-reg .with-borders {
+  padding: .6em 3.5em;
+  border: 2px solid dimgray;
+  border-radius: .9em;
+}
+
+section.hero {
+  text-align: center;
 }
 
 section.hero img {
   width: 100%;
+}
+
+section.hero h1 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #141414;
+  margin-bottom: 0.7em;
+}
+
+section.hero p {
+  font-size: 18px;
+  font-weight: 500;
+  color: dimgray;
+  line-height: 1.5em;
+  margin: 0em 0.7em;
+  margin-bottom: 1em;
+}
+
+section.hero button {
+  background-color: #141414;
+  color: #fafafa;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 38%;
+  padding: .7em 0em;
+  margin: .5em .5em 1em .5em;
+  border-radius: .9em;
+  cursor: pointer;
+}
+
+footer .client {
+  margin: 1.5em 0.5em;
+  padding: 0 0em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer svg {
+  -webkit-transform: scale(0.7, 0.7);
+          transform: scale(0.7, 0.7);
+}
+
+footer .attribution {
+  margin: 1.5em;
+  padding: 1em;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
 }
 /*# sourceMappingURL=style.css.map */
