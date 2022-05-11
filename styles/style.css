@@ -1,7 +1,8 @@
-@import url(https://fonts.google.com/specimen/Epilogue);
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@100;300;500;700&display=swap");
 body {
   margin: 0;
   font-family: 'Epilogue', sans-serif;
+  background-color: #fafafa;
 }
 
 header {
@@ -125,10 +126,19 @@ nav .login-reg .with-borders:hover {
 
 section.hero {
   text-align: center;
+  /*.mobile-img{
+        display: none;
+    }
+    */
 }
 
 section.hero img {
   width: 100%;
+  height: auto;
+}
+
+section.hero .desktop-img {
+  display: none;
 }
 
 section.hero h1 {
@@ -152,20 +162,26 @@ section.hero button {
   color: #fafafa;
   font-size: 18px;
   font-weight: 700;
-  border: none;
+  border: 2px solid transparent;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
   width: 38%;
-  padding: .7em 0em;
-  margin: .5em .5em 1em .5em;
+  padding: .7em 0.6em;
+  margin: .5em .5em 2em .5em;
   border-radius: .9em;
   cursor: pointer;
 }
 
+section.hero button:hover {
+  color: #141414;
+  background-color: #fafafa;
+  border: 2px solid #141414;
+}
+
 footer .client {
   margin: 1.5em 0.5em;
-  padding: 0 0em;
+  padding: .2em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,9 +200,180 @@ footer svg {
 
 footer .attribution {
   margin: 1.5em;
+  margin-bottom: 0;
+  margin-top: 2em;
   padding: 1em;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
+  position: relative;
+  top: 2em;
 }
+
+/*******----------------media query------------------********/
+/*----------------@min-width 825px--------------*/
+@media only screen and (min-width: 825px) {
+  body {
+    margin: 0 1em;
+  }
+  header {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .logo {
+    margin: 1.5em 2em;
+    position: relative;
+    top: 4px;
+  }
+  header .menu-open {
+    display: none;
+  }
+  nav {
+    position: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: none;
+    height: auto;
+    width: 100%;
+    font-size: 14px;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  nav .menu-close {
+    display: none;
+  }
+  nav .arrow-up {
+    display: none;
+  }
+  nav .arrow-down {
+    padding: 0em .5em;
+  }
+  nav .sub-menu {
+    display: none;
+    margin-top: 2em;
+    padding: 0;
+    padding-top: 1em;
+    background-color: #141414;
+  }
+  nav .sub-menu .dropdown-icon {
+    padding-right: 1em;
+    position: relative;
+    top: 2px;
+    -webkit-transform: scale(1.2, 1.2);
+            transform: scale(1.2, 1.2);
+  }
+  nav .main-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    margin-right: 5em;
+    padding: 0;
+  }
+  nav .main-nav li {
+    padding: .5em .4em;
+  }
+  nav .main-nav li:hover {
+    color: #141414;
+    cursor: pointer;
+  }
+  nav .main-nav .careers {
+    padding-right: 1em;
+  }
+  nav .main-nav .about {
+    padding-right: 1em;
+  }
+  nav .login-reg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    padding: 0em;
+    text-align: center;
+    font-size: 15px;
+  }
+  nav .login-reg li {
+    padding: .6em;
+  }
+  nav .login-reg .with-borders {
+    padding: .6em 1.5em;
+    border: 2px solid dimgray;
+    border-radius: .9em;
+  }
+  section.hero {
+    text-align: left;
+    margin: 0;
+    margin-bottom: 10em;
+  }
+  section.hero img {
+    width: 45%;
+    height: auto;
+    margin-bottom: 4.8em;
+  }
+  section.hero .mobile-img {
+    display: none;
+  }
+  section.hero .desktop-img {
+    display: block;
+    float: right;
+  }
+  section.hero .content {
+    margin-left: 4em;
+  }
+  section.hero h1 {
+    font-size: 55px;
+    width: 45%;
+    font-weight: 700;
+    margin-bottom: 0.8em;
+    line-height: 65px;
+  }
+  section.hero h1 span {
+    display: block;
+  }
+  section.hero p {
+    font-size: 18px;
+    font-weight: 500;
+    color: dimgray;
+    line-height: 1.5em;
+    margin: 0em;
+    margin-bottom: 2em;
+    width: 40%;
+  }
+  section.hero button {
+    font-size: 16px;
+    width: 20%;
+    padding: .8em 0em;
+    margin: .5em .5em 4em 0em;
+  }
+  footer .client {
+    margin: 1.5em 0.5em;
+    padding: .2em 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer svg {
+    -webkit-transform: unset;
+            transform: unset;
+  }
+}
+
+/*----------------@min-width 900px--------------*/
 /*# sourceMappingURL=style.css.map */
