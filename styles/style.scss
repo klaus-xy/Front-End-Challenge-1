@@ -20,7 +20,8 @@ header{
         margin: 1.5em 1.25em;
     }
     .menu-open{
-        margin: 1.5em;
+        margin: .5em;
+        padding: .5em;
     }
 }
 
@@ -37,19 +38,27 @@ nav{
     color:$medium-gray;
     text-transform: capitalize;
     z-index: 10;
-    transform: translateX(0%);
+    transform: translateX(100%);
     transition: transform .5s ease-in-out;
 
     .menu-close{
         float: right;
         margin: 1em 1em;
+        padding: .5em;
     }
 
     .arrow-up{
         display: none;
+        padding: 0.3em .5em;
+        position: relative;
+        top: 4px;
     }
     .arrow-down{
-        padding: 0em .5em;
+       // display: none;
+        padding: 0.3em .5em;
+        position: relative;
+        top: 4px;
+        
     }
     .sub-menu{
        //display: none;
@@ -64,6 +73,25 @@ nav{
        }
 
     }
+    .features-dropdown{
+       // left: -50px;
+       // padding: 1em .5em;
+        //padding-left: 1em;   
+        display: none;
+        pointer-events: none;
+        //transform: translateY(-10%);
+        //opacity: 0.2;
+        //transition: opacity 1s ease-in-out, transform 1s ease-in-out;         
+    }
+    .company-dropdown{
+        //left: 135px;
+        //padding: 1.2em 0.4em;
+        display: none;
+        pointer-events: none;
+       // transform: translateY(0%);
+       // opacity: 0.2;
+        //transition: opacity 1s ease-in-out, transform 1s ease-in-out;  
+    } 
 
     a{
         text-decoration: none;
@@ -81,7 +109,7 @@ nav{
        li{
            list-style: none;
            width: max-content;
-           padding: .6em 1.5em;
+           padding: .8em 1.5em;
 
            &:hover{
             color: $almost-black;
@@ -116,9 +144,14 @@ nav{
 section.hero{
     text-align: center;
 
+    .can-animate{
+        animation: dropdown-fadein 1s ease-in-out forwards;
+    }
+
     img{
         width: 100%;
         height: auto;
+        animation: fade-in 1s ease-in-out forwards;
     }
    /*.mobile-img{
         display: none;
@@ -160,6 +193,7 @@ section.hero{
             color: $almost-black;
             background-color: $almost-white ;
             border: 2px solid $almost-black;
+            transition: background-color .25s ease-out;
         }
 
     }
@@ -171,6 +205,7 @@ footer{
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        animation: fade-in 1s ease-in-out forwards;
     }
     svg{
         transform: scale(0.7, 0.7);
@@ -188,6 +223,90 @@ footer{
     }
 }
 
+.overlay{
+    display: none;
+    position: absolute;
+    background-color: rgba(8, 2, 2, 0.541);
+    width: 100%;
+    height: 100vh;
+    //opacity: .9;
+    z-index: 10;
+}
+
+ /*----------Java Script Class Lists----------*/
+
+.open-nav{
+    transform: translateX(0%);
+}
+
+.animate-open-dropdown{
+    animation: open-dropdown-anim .25s ease-in-out;
+}
+.animate-close-dropdown{
+    animation: open-dropdown-anim .25s reverse;
+}
+ .animate-overlay{
+     animation: overlay-anim .5s ease-in-out;
+ }
+
+/*-----------------ANIMATIONS-----------------*/
+@keyframes open-dropdown-anim{
+    from{
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+/*@keyframes close-dropdown-anim{
+    from{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    to{
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+    
+} */
+@keyframes overlay-anim{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes fade-in{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes dropdown-fadein{
+    from{
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+@keyframes side-fadein{
+    from{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
 
 /*******----------------***MEDIA QUERIES***------------------********/
 
@@ -219,7 +338,8 @@ footer{
         height: auto;
         width: 100%;
         font-size: 14px;
-        transform: translateX(0);
+        transform: translateX(0%);
+        animation: side-fadein 1s ease-in-out forwards;
     
         .menu-close{
             display: none;
@@ -228,11 +348,12 @@ footer{
         .arrow-up{
             display: none;
         }
-        .arrow-down{
+       /* .arrow-down{
             padding: 0em .5em;
         }
+        */
         .sub-menu{
-           display: block;
+           display: none;
            position: fixed;
            margin-top: 1.5em;
            //padding: 0;
@@ -250,16 +371,20 @@ footer{
         .features-dropdown{
             left: -50px;
             padding: 1em .5em;
+            box-shadow: 2px 2px 5px rgba(189, 189, 185, 0.205);
             //padding-left: 1em;   
-            transform: translateY(0%);
-            transition: transform 1s ease-in-out;         
+            //transform: translateY(-10%);
+            //opacity: 0.2;
+            //transition: opacity 1s ease-in-out, transform 1s ease-in-out;         
         }
         .company-dropdown{
             left: 135px;
             padding: 1.2em 0.4em;
-            transform: translateY(0%);
-            transition: transform 1s ease-in-out;  
-        }
+            box-shadow: 2px 2px 5px rgba(189, 189, 185, 0.205);
+           // transform: translateY(-10%);
+           // opacity: 0.2;
+            //transition: opacity 1s ease-in-out, transform 1s ease-in-out;  
+        }   
 
         .main-nav{
             display: flex;
@@ -329,7 +454,7 @@ footer{
        
         h1{
             font-size: 50px;
-            width: 45%;
+            width: 48%;
             font-weight: 700;
             margin-bottom: 0.8em;
             line-height: 65px;

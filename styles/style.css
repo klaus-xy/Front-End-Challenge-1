@@ -22,7 +22,8 @@ header .logo {
 }
 
 header .menu-open {
-  margin: 1.5em;
+  margin: .5em;
+  padding: .5em;
 }
 
 nav {
@@ -37,8 +38,8 @@ nav {
   color: dimgray;
   text-transform: capitalize;
   z-index: 10;
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
   -webkit-transition: -webkit-transform .5s ease-in-out;
   transition: -webkit-transform .5s ease-in-out;
   transition: transform .5s ease-in-out;
@@ -48,14 +49,20 @@ nav {
 nav .menu-close {
   float: right;
   margin: 1em 1em;
+  padding: .5em;
 }
 
 nav .arrow-up {
   display: none;
+  padding: 0.3em .5em;
+  position: relative;
+  top: 4px;
 }
 
 nav .arrow-down {
-  padding: 0em .5em;
+  padding: 0.3em .5em;
+  position: relative;
+  top: 4px;
 }
 
 nav .sub-menu {
@@ -69,6 +76,16 @@ nav .sub-menu .dropdown-icon {
   top: 2px;
   -webkit-transform: scale(1.2, 1.2);
           transform: scale(1.2, 1.2);
+}
+
+nav .features-dropdown {
+  display: none;
+  pointer-events: none;
+}
+
+nav .company-dropdown {
+  display: none;
+  pointer-events: none;
 }
 
 nav a {
@@ -93,7 +110,7 @@ nav .main-nav li {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  padding: .6em 1.5em;
+  padding: .8em 1.5em;
 }
 
 nav .main-nav li:hover {
@@ -131,9 +148,16 @@ section.hero {
     */
 }
 
+section.hero .can-animate {
+  -webkit-animation: dropdown-fadein 1s ease-in-out forwards;
+          animation: dropdown-fadein 1s ease-in-out forwards;
+}
+
 section.hero img {
   width: 100%;
   height: auto;
+  -webkit-animation: fade-in 1s ease-in-out forwards;
+          animation: fade-in 1s ease-in-out forwards;
 }
 
 section.hero .desktop-img {
@@ -178,6 +202,8 @@ section.hero button:hover {
   color: #141414;
   background-color: #fafafa;
   border: 2px solid #141414;
+  -webkit-transition: background-color .25s ease-out;
+  transition: background-color .25s ease-out;
 }
 
 footer .client {
@@ -192,6 +218,8 @@ footer .client {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-animation: fade-in 1s ease-in-out forwards;
+          animation: fade-in 1s ease-in-out forwards;
 }
 
 footer svg {
@@ -209,6 +237,159 @@ footer .attribution {
   font-weight: 300;
   position: relative;
   top: 2em;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  background-color: rgba(8, 2, 2, 0.541);
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+}
+
+/*----------Java Script Class Lists----------*/
+.open-nav {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.animate-open-dropdown {
+  -webkit-animation: open-dropdown-anim .25s ease-in-out;
+          animation: open-dropdown-anim .25s ease-in-out;
+}
+
+.animate-close-dropdown {
+  animation: open-dropdown-anim .25s reverse;
+}
+
+.animate-overlay {
+  -webkit-animation: overlay-anim .5s ease-in-out;
+          animation: overlay-anim .5s ease-in-out;
+}
+
+/*-----------------ANIMATIONS-----------------*/
+@-webkit-keyframes open-dropdown-anim {
+  from {
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes open-dropdown-anim {
+  from {
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+/*@keyframes close-dropdown-anim{
+    from{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    to{
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+    
+} */
+@-webkit-keyframes overlay-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes overlay-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes dropdown-fadein {
+  from {
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes dropdown-fadein {
+  from {
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes side-fadein {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes side-fadein {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
 }
 
 /*******----------------***MEDIA QUERIES***------------------********/
@@ -248,8 +429,14 @@ footer .attribution {
     height: auto;
     width: 100%;
     font-size: 14px;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-animation: side-fadein 1s ease-in-out forwards;
+            animation: side-fadein 1s ease-in-out forwards;
+    /* .arrow-down{
+            padding: 0em .5em;
+        }
+        */
   }
   nav .menu-close {
     display: none;
@@ -257,11 +444,8 @@ footer .attribution {
   nav .arrow-up {
     display: none;
   }
-  nav .arrow-down {
-    padding: 0em .5em;
-  }
   nav .sub-menu {
-    display: block;
+    display: none;
     position: fixed;
     margin-top: 1.5em;
     background-color: white;
@@ -275,22 +459,14 @@ footer .attribution {
   nav .features-dropdown {
     left: -50px;
     padding: 1em .5em;
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
-    -webkit-transition: -webkit-transform 1s ease-in-out;
-    transition: -webkit-transform 1s ease-in-out;
-    transition: transform 1s ease-in-out;
-    transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+    -webkit-box-shadow: 2px 2px 5px rgba(189, 189, 185, 0.205);
+            box-shadow: 2px 2px 5px rgba(189, 189, 185, 0.205);
   }
   nav .company-dropdown {
     left: 135px;
     padding: 1.2em 0.4em;
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
-    -webkit-transition: -webkit-transform 1s ease-in-out;
-    transition: -webkit-transform 1s ease-in-out;
-    transition: transform 1s ease-in-out;
-    transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+    -webkit-box-shadow: 2px 2px 5px rgba(189, 189, 185, 0.205);
+            box-shadow: 2px 2px 5px rgba(189, 189, 185, 0.205);
   }
   nav .main-nav {
     display: -webkit-box;
@@ -354,7 +530,7 @@ footer .attribution {
   }
   section.hero h1 {
     font-size: 50px;
-    width: 45%;
+    width: 48%;
     font-weight: 700;
     margin-bottom: 0.8em;
     line-height: 65px;
