@@ -123,14 +123,20 @@
       nav.classList.remove('open-nav')
       overlay.style.display = 'none';
       
-/*
       if(features_dropdown.style.display == 'block'){
         open_features.style.display = 'inline-block';
         close_features.style.display = 'none';
         features_dropdown.style.display = 'none';
         features_dropdown.style.pointerEvents = 'none';
-        features_dropdown.classList.remove('animate-open-dropdown')
-      }*/
+        //features_dropdown.classList.remove('animate-open-dropdown')
+      }
+      if(company_dropdown.style.display == 'block'){
+        open_company.style.display = 'inline-block';
+        close_company.style.display = 'none';
+        company_dropdown.style.display = 'none';
+        company_dropdown.style.pointerEvents = 'none';
+        //features_dropdown.classList.remove('animate-open-dropdown')
+      }
     })
 
     /*on clicking features dropdown arrow-down*/
@@ -147,7 +153,7 @@ close_features.addEventListener('click', ()=> {
       close_features.style.display = 'none';
       features_dropdown.style.display = 'none';
       features_dropdown.style.pointerEvents = 'none';
-     // features_dropdown.classList.remove('animate-open-dropdown')
+      features_dropdown.classList.remove('animate-open-dropdown')
       //features_dropdown.classList.add('animate-close-dropdown')
     })
 
@@ -166,7 +172,7 @@ close_company.addEventListener('click', ()=> {
       close_company.style.display = 'none';
       company_dropdown.style.display = 'none';
       company_dropdown.style.pointerEvents = 'none';
-      //company_dropdown.classList.remove('animate-open-dropdown')
+      company_dropdown.classList.remove('animate-open-dropdown')
       //features_dropdown.classList.add('animate-close-dropdown')
     })
 
