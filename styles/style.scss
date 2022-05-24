@@ -216,7 +216,7 @@ footer{
         margin-top: 2em;
         padding: 1em;
         text-align: center;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 500;
         position: relative;
         top: 2em;
@@ -493,6 +493,10 @@ footer{
         }
         svg{
             transform: unset;
+        }
+
+        .attribution{
+            font-size: 14px;
         }
     }
 }

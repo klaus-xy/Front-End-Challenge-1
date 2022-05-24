@@ -233,7 +233,7 @@ footer .attribution {
   margin-top: 2em;
   padding: 1em;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   position: relative;
   top: 2em;
@@ -569,6 +569,9 @@ footer .attribution {
   footer svg {
     -webkit-transform: unset;
             transform: unset;
+  }
+  footer .attribution {
+    font-size: 14px;
   }
 }
 
