@@ -34,7 +34,7 @@ Using the mobile first workflow:
 
 ### What I learned
 
-I learnt a lot from this challenge starting from learning a good webflow and semantics to learning how to use sass,using custo css elements such as flex box, position etc and i learnt a little biy of java scipt implementation.
+I learnt a lot from this challenge starting from learning a good webflow and semantics to learning how to use sass,using custo css elements such as flex box, position etc and i learnt a little bit of java scipt implementation.
 
 
 ### Continued development
