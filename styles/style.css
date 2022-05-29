@@ -186,7 +186,7 @@ section.hero button {
   color: #fafafa;
   font-size: 18px;
   font-weight: 700;
-  border: 2px solid transparent;
+  border: 2px solid #fafafa;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
@@ -196,14 +196,14 @@ section.hero button {
   margin: .5em .5em 2em .5em;
   border-radius: .9em;
   cursor: pointer;
+  -webkit-transition: background-color .25s ease-out;
+  transition: background-color .25s ease-out;
 }
 
 section.hero button:hover {
   color: #141414;
   background-color: #fafafa;
   border: 2px solid #141414;
-  -webkit-transition: background-color .25s ease-out;
-  transition: background-color .25s ease-out;
 }
 
 footer .client {
@@ -228,6 +228,7 @@ footer svg {
 }
 
 footer .attribution {
+  font-family: sans-serif;
   margin: 1.5em;
   margin-bottom: 0;
   margin-top: 2em;
@@ -255,21 +256,25 @@ footer .attribution {
 }
 
 .animate-open-dropdown {
-  -webkit-animation: open-dropdown-anim .25s ease-in-out;
-          animation: open-dropdown-anim .25s ease-in-out;
+  -webkit-animation: dropdown-anim .25s ease-in-out forwards;
+          animation: dropdown-anim .25s ease-in-out forwards;
 }
 
 .animate-close-dropdown {
-  animation: open-dropdown-anim .25s reverse;
+  animation: dropdown-anim .25s ease-in-out forwards reverse;
 }
 
-.animate-overlay {
-  -webkit-animation: overlay-anim .5s ease-in-out;
-          animation: overlay-anim .5s ease-in-out;
+.animate-show-overlay {
+  -webkit-animation: overlay-anim .5s ease-in-out forwards;
+          animation: overlay-anim .5s ease-in-out forwards;
+}
+
+.animate-close-overlay {
+  animation: overlay-anim .5s ease-in-out forwards reverse;
 }
 
 /*-----------------ANIMATIONS-----------------*/
-@-webkit-keyframes open-dropdown-anim {
+@-webkit-keyframes dropdown-anim {
   from {
     -webkit-transform: translateY(-20%);
             transform: translateY(-20%);
@@ -281,7 +286,7 @@ footer .attribution {
     opacity: 1;
   }
 }
-@keyframes open-dropdown-anim {
+@keyframes dropdown-anim {
   from {
     -webkit-transform: translateY(-20%);
             transform: translateY(-20%);
@@ -294,17 +299,6 @@ footer .attribution {
   }
 }
 
-/*@keyframes close-dropdown-anim{
-    from{
-        transform: translateY(0%);
-        opacity: 1;
-    }
-    to{
-        transform: translateY(-20%);
-        opacity: 0;
-    }
-    
-} */
 @-webkit-keyframes overlay-anim {
   from {
     opacity: 0;
@@ -313,6 +307,7 @@ footer .attribution {
     opacity: 1;
   }
 }
+
 @keyframes overlay-anim {
   from {
     opacity: 0;
@@ -472,6 +467,9 @@ footer .attribution {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 0;
     margin-right: 5em;
     padding: 0;

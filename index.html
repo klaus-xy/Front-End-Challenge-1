@@ -116,26 +116,45 @@
 
     menu_open.addEventListener ('click', ()=> {
       nav.classList.add('open-nav')
-      overlay.style.display = 'unset';
-      overlay.classList.add('animate-overlay')
+      overlay.style.display = 'grid';
+      overlay.classList.add('animate-show-overlay')
+      setTimeout(function(){
+        overlay.classList.remove('animate-show-overlay')
+      }, 500)
+     
+
     })
     menu_close.addEventListener('click', ()=> {
       nav.classList.remove('open-nav')
-      overlay.style.display = 'none';
+      overlay.classList.add('animate-close-overlay')
+      setTimeout(function(){
+        overlay.classList.remove('animate-close-overlay')
+        overlay.style.display = 'none';
+      }, 500)
+      
       
       if(features_dropdown.style.display == 'block'){
         open_features.style.display = 'inline-block';
-        close_features.style.display = 'none';
-        features_dropdown.style.display = 'none';
-        features_dropdown.style.pointerEvents = 'none';
-        //features_dropdown.classList.remove('animate-open-dropdown')
+      close_features.style.display = 'none';
+      features_dropdown.style.pointerEvents = 'none';
+      features_dropdown.classList.add('animate-close-dropdown')
+
+      setTimeout(function(){
+      features_dropdown.classList.remove('animate-close-dropdown')
+      features_dropdown.style.display = 'none';
+      }, 250)
       }
+      
       if(company_dropdown.style.display == 'block'){
         open_company.style.display = 'inline-block';
-        close_company.style.display = 'none';
-        company_dropdown.style.display = 'none';
-        company_dropdown.style.pointerEvents = 'none';
-        //features_dropdown.classList.remove('animate-open-dropdown')
+      close_company.style.display = 'none';
+      company_dropdown.style.pointerEvents = 'none';
+      company_dropdown.classList.add('animate-close-dropdown')
+
+      setTimeout(function(){
+      company_dropdown.classList.remove('animate-close-dropdown')
+      company_dropdown.style.display = 'none';
+      }, 250)
       }
     })
 
@@ -146,15 +165,23 @@ open_features.addEventListener('click', ()=> {
       features_dropdown.style.display = 'block';
       features_dropdown.style.pointerEvents = 'auto';
       features_dropdown.classList.add('animate-open-dropdown')
+
+      setTimeout(function(){
+        features_dropdown.classList.remove('animate-open-dropdown')
+      }, 250)
     })
+
     /*on clicking features dropdown arrow-up*/
 close_features.addEventListener('click', ()=> {
       open_features.style.display = 'inline-block';
       close_features.style.display = 'none';
-      features_dropdown.style.display = 'none';
       features_dropdown.style.pointerEvents = 'none';
-      features_dropdown.classList.remove('animate-open-dropdown')
-      //features_dropdown.classList.add('animate-close-dropdown')
+      features_dropdown.classList.add('animate-close-dropdown')
+
+      setTimeout(function(){
+      features_dropdown.classList.remove('animate-close-dropdown')
+      features_dropdown.style.display = 'none';
+      }, 250)
     })
 
 
@@ -165,15 +192,23 @@ close_features.addEventListener('click', ()=> {
       company_dropdown.style.display = 'block';
       company_dropdown.style.pointerEvents = 'auto';
       company_dropdown.classList.add('animate-open-dropdown')
+
+      setTimeout(function(){
+      company_dropdown.classList.remove('animate-open-dropdown')
+      }, 250)
     })
+
         /*on clicking company dropdown arrow-up*/
 close_company.addEventListener('click', ()=> {
       open_company.style.display = 'inline-block';
       close_company.style.display = 'none';
-      company_dropdown.style.display = 'none';
       company_dropdown.style.pointerEvents = 'none';
-      company_dropdown.classList.remove('animate-open-dropdown')
-      //features_dropdown.classList.add('animate-close-dropdown')
+      company_dropdown.classList.add('animate-close-dropdown')
+
+      setTimeout(function(){
+      company_dropdown.classList.remove('animate-close-dropdown')
+      company_dropdown.style.display = 'none';
+      }, 250)
     })
 
 

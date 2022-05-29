@@ -180,7 +180,7 @@ section.hero{
         color: $almost-white;
         font-size: 18px;
         font-weight: 700;
-        border: 2px solid transparent;
+        border: 2px solid $almost-white;
         min-width: fit-content;
         max-width: 150px;
         width: 38%;
@@ -188,12 +188,13 @@ section.hero{
         margin: .5em .5em 2em .5em;
         border-radius: .9em;
         cursor: pointer;
+        transition: background-color .25s ease-out;
 
         &:hover{
             color: $almost-black;
             background-color: $almost-white ;
             border: 2px solid $almost-black;
-            transition: background-color .25s ease-out;
+           
         }
 
     }
@@ -211,6 +212,7 @@ footer{
         transform: scale(0.7, 0.7);
     }
     .attribution{
+        font-family: sans-serif;
         margin: 1.5em;
         margin-bottom: 0;
         margin-top: 2em;
@@ -240,17 +242,20 @@ footer{
 }
 
 .animate-open-dropdown{
-    animation: open-dropdown-anim .25s ease-in-out;
+    animation: dropdown-anim .25s ease-in-out forwards;
 }
 .animate-close-dropdown{
-    animation: open-dropdown-anim .25s reverse;
+    animation: dropdown-anim .25s ease-in-out forwards reverse;
 }
- .animate-overlay{
-     animation: overlay-anim .5s ease-in-out;
+ .animate-show-overlay{
+     animation: overlay-anim .5s ease-in-out forwards;
+ }
+ .animate-close-overlay{
+     animation: overlay-anim .5s ease-in-out forwards reverse;
  }
 
 /*-----------------ANIMATIONS-----------------*/
-@keyframes open-dropdown-anim{
+@keyframes dropdown-anim{
     from{
         transform: translateY(-20%);
         opacity: 0;
@@ -260,17 +265,7 @@ footer{
         opacity: 1;
     }
 }
-/*@keyframes close-dropdown-anim{
-    from{
-        transform: translateY(0%);
-        opacity: 1;
-    }
-    to{
-        transform: translateY(-20%);
-        opacity: 0;
-    }
-    
-} */
+
 @keyframes overlay-anim{
     from{
         opacity: 0;
@@ -279,6 +274,7 @@ footer{
         opacity: 1;
     }
 }
+
 @keyframes fade-in{
     from{
         opacity: 0;
@@ -388,6 +384,7 @@ footer{
 
         .main-nav{
             display: flex;
+            align-items: center;
             margin: 0;
            margin-right: 5em;
             padding: 0;
