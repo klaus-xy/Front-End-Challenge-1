@@ -265,12 +265,12 @@ footer .attribution {
 }
 
 .animate-show-overlay {
-  -webkit-animation: overlay-anim .5s ease-in-out forwards;
-          animation: overlay-anim .5s ease-in-out forwards;
+  -webkit-animation: overlay-anim .3s ease-in-out forwards;
+          animation: overlay-anim .3s ease-in-out forwards;
 }
 
 .animate-close-overlay {
-  animation: overlay-anim .5s ease-in-out forwards reverse;
+  animation: overlay-anim .3s ease-in-out forwards reverse;
 }
 
 /*-----------------ANIMATIONS-----------------*/
